@@ -1,19 +1,18 @@
 const COLORS = {
-    PRIMARIA: '#3f50b5',
+  PRIMARIA: "#3f50b5",
 
-    SECUNDARIA: '#ff9100',
+  SECUNDARIA: "#ff9100",
 
-    FUNDO_PADRAO: '#f7f7f7',
+  TERCIARIA: "#99A7BB",
 
-    FUNDO_ESCURO: '#000',
+  FUNDO_PADRAO: "#f7f7f7",
 
-    BRANCA: '#fff',
+  FUNDO_ESCURO: "#000",
+
+  BRANCA: "#fff",
 };
 
 export default COLORS;
-
-
-
 
 /*:root {
     --cor-primaria-clara: #7986cb;
