@@ -1,20 +1,13 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native"; // Importe o NavigationContainer
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+
 import COLORS from "./common/Constraint/Colors";
-// Importar todos os componentes que criamos anteriormente
-import BotaoContador from "./common/Components/BotaoContador/BotaoContador";
-import Contador from "./common/Components/Contador/Contador";
-import MostrarTela from "./common/Components/MostrarTela/MostrarTela";
-import Somar from "./common/Components/Somar/Somar";
-import Diminuir from "./common/Components/Diminuir/Diminuir";
-import Multiplicar from "./common/Components/Multiplicar/Multiplicar";
-import Dividir from "./common/Components/Dividir/Dividir";
-import CambioDolar from "./common/Components/CambioDolar/CambioDolar";
-import CambioEuro from "./common/Components/CambioEuro/CambioEuro";
-import CalculoIMC from "./common/Components/CalculoIMC/CalculoIMC";
-import RemoverNome from "./common/Components/RemoverNome/RemoverNome";
-import ListaNomes from "./common/Components/ReAdd/ListaNomes"; 
+import Tela1 from "./common/Telas/Tela1";
+import Tela2 from "./common/Telas/Tela2";
+import Tela3 from "./common/Telas/Tela3";
 
 const estilos = StyleSheet.create({
   tudo: {
@@ -22,59 +15,24 @@ const estilos = StyleSheet.create({
     backgroundColor: COLORS.FUNDO_ESCURO,
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "row",
+    color: COLORS.BRANCA,
     gap: 16,
   },
-  contador: {
-    fontSize: 72,
-    color: COLORS.BRANCA,
-  },
-  // Remova o estilo para o botão
-  // botao: {
-  //   backgroundColor: "red",
-  //   width: 64,
-  //   height: 64,
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
-  // botaoTexto: {
-  //   fontSize: 48,
-  //   color: COLORS.BRANCA,
-  // },
 });
 
 export default function App() {
-  
-  // const [contador, setContador] = React.useState(0);
+  const Tab = createMaterialBottomTabNavigator();
 
   return (
-    <View style={estilos.tudo}>
-      {/* Renderizar os componentes */}
-      <BotaoContador />
-      <Contador />
-      <MostrarTela />
-      <Somar />
-      <Diminuir />
-      <Multiplicar />
-      <Dividir />
-      <CambioDolar />
-      <CambioEuro />
-      <CalculoIMC />
-      <ListaNomes />
-      <RemoverNome />
-
-      {/* Comente os botões originais */}
-      {/* <ButtonCustomized cor="secundaria" onPress={() => setContador(contador - 1)}>
-        -
-      </ButtonCustomized>
-
-      <Text style={estilos.contador}>{contador}</Text>
-
-      <ButtonCustomized  cor="primaria" onPress={() => setContador(contador + 1)}>
-        +
-      </ButtonCustomized> */}
-
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer> {/* Envolve todo o seu aplicativo com o NavigationContainer */}
+      <View style={estilos.tudo}>
+        <Tab.Navigator>
+          <Tab.Screen name="Tela1" component={Tela1} />
+          <Tab.Screen name="Tela2" component={Tela2} />
+          <Tab.Screen name="Tela3" component={Tela3} />
+        </Tab.Navigator>
+        <StatusBar style="auto" />
+      </View>
+    </NavigationContainer>
   );
 }

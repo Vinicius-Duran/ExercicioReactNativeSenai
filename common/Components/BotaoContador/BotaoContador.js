@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, TextInput, Button } from "react-native";
 
 const BotaoContador = () => {
   const [contador, setContador] = useState(0);
@@ -14,6 +14,5 @@ const BotaoContador = () => {
     </View>
   );
 };
-
 
 export default BotaoContador;

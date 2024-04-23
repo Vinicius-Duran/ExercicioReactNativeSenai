@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, FlatList } from 'react-native';
 
 const ListaNomes = () => {
   const [nome, setNome] = useState("");
-  const [nomes, setNomes] = useState(["João", "Maria", "José"]);
+  const [nomes, setNomes] = useState([""]);
 
   const adicionarNome = () => {
     setNomes([...nomes, nome]);

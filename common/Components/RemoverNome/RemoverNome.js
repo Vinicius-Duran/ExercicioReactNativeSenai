@@ -12,7 +12,7 @@ const RemoverNome = () => {
 
   return (
     <View>
-      <FlatList
+      <View
         data={nomes}
         renderItem={({ item, index }) => (
           <View>
