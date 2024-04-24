@@ -12,11 +12,10 @@ import Tela3 from "./common/Telas/Tela3";
 const estilos = StyleSheet.create({
   tudo: {
     flex: 1,
-    backgroundColor: COLORS.FUNDO_ESCURO,
-    alignItems: "center",
-    justifyContent: "center",
     color: COLORS.BRANCA,
     gap: 16,
+    width: "100%",
+    backgroundColor: COLORS.FUNDO_ESCURO,
   },
 });
 
@@ -24,9 +23,9 @@ export default function App() {
   const Tab = createMaterialBottomTabNavigator();
 
   return (
-    <NavigationContainer> {/* Envolve todo o seu aplicativo com o NavigationContainer */}
+    <NavigationContainer style={estilos.tudo}> {/* Envolve todo o seu aplicativo com o NavigationContainer */}
       <View style={estilos.tudo}>
-        <Tab.Navigator>
+        <Tab.Navigator style={estilos.tudo}>
           <Tab.Screen name="Tela1" component={Tela1} />
           <Tab.Screen name="Tela2" component={Tela2} />
           <Tab.Screen name="Tela3" component={Tela3} />
