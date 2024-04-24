@@ -25,7 +25,7 @@ export default function Tela1() {
         <Contador />
         <MostrarTela />
 
-     
+        <StatusBar style="auto" />
       </View>
     );
   }
